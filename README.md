@@ -2,7 +2,7 @@
 
 By default, Meteor does not perform any special handling on files placed inside the `public` directory of your application.
 
-With this package, you can place a `publicsources.json` file in your application directory with a description of bundles of source files to process for client-side lazy-loading.
+With this package, you can place a `custom.publicsources.json` file in your application directory with a description of bundles of source files to process for client-side lazy-loading.
 
 Source files will be transpiled and collected into a single `.js` and `.css` file for each bundle.
 
@@ -16,7 +16,7 @@ meteor add numtel:publicsources
 
 ## Bundle Description Syntax
 
-Inside of a `publicsources.json` file in the root of your application, you may describe bundles of source files to serve to the client.
+Inside of a `custom.publicsources.json` file in the root of your application, you may describe bundles of source files to serve to the client. The filename may be different than `custom.publicsources.json` as long as it includes the extension `.publicsources.json`. (e.g. `myapp.publicsources.json` is also valid)
 
 The following example will serve `admin.js`, `admin.js.map`, `admin.css`, and `admin.css.map`:
 
