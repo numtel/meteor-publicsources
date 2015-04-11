@@ -33,7 +33,8 @@ var loadJSONContent = function (compileStep, content) {
 
 // XXX Hack. If this line is not present `xxx.json` handlers are not called.
 //  This is a Meteor bug.
-Plugin.registerSourceHandler("json", null);
+if (projectContext && !projectContext.isopackCache._isopacks['mquandalle:bower'])
+  Plugin.registerSourceHandler("json", function () {});
 
 // End code from mquandalle:bower
 
@@ -62,7 +63,7 @@ var processBundles = function(compileStep, bundles){
   for(var name in bundles){
     bundle = bundles[name];
     var processed = bundlePublicSources(bundle.sort(sortHTMLFirst));
-    
+
     processed.scripts.forEach(function(script){
       compileStep.addAsset({
         path: name + '.js',
@@ -116,7 +117,7 @@ var bundlePublicSources = function(sources){
       isopackCache: projectContext.isopackCache,
       includeCordovaUnibuild: false
     });
-    
+
     var buildData = app.unibuilds[0];
 
     return {
