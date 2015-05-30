@@ -45,6 +45,10 @@ Combine with a library loader integrated into `iron:router` for the full experie
 
 * If adding a new source handler package (e.g. `mquandalle:jade`), you must restart Meteor for this package to recognize the change.
 
+## Test application
+
+Test cases for this package are not executed using the normal `meteor test-packages` command. Instead, start the Meteor app inside of the `test` directory and see the status in the browser.
+
 ## License
 
 MIT

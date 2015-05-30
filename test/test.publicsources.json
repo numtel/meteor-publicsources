@@ -1,0 +1,7 @@
+{
+  "test-bundle": [ 
+    "mockup.html",
+    "mockup.less",
+    "mockup.coffee"
+  ]
+}
